@@ -7,6 +7,7 @@ package doacoes;
 /**
  * 
  */
+
 public class Utilizador {
 
 	private String nome; 
@@ -23,6 +24,7 @@ public class Utilizador {
 	 * @param email
 	 * @param password
 	 */
+	
 	public Utilizador(String nome, String email, String password) {
 		this.nome = nome;
 		this.email = email;

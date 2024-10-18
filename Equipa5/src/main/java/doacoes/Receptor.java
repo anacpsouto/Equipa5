@@ -6,6 +6,7 @@ package doacoes;
 /**
  * 
  */
-public class Receptor {
+public class Receptor extends Utilizador{
 
+	
 }

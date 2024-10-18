@@ -9,6 +9,7 @@ import java.util.List;
 /**
  * 
  */
+
 public class GerirDoacoes {
 	private List <Utilizador> listaUtilizadores;
 	

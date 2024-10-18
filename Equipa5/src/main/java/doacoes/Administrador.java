@@ -6,6 +6,6 @@ package doacoes;
 /**
  * 
  */
-public class Administrador {
-
+public class Administrador extends Utilizador {
+	
 }

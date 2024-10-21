@@ -8,13 +8,13 @@ import java.util.ArrayList;
  * 
  */
 public class Tipo  {
-	private List <Desktops> listaDesktop;
-	private List <Laptops> listaLaptop;
-	private List <Monitores> listaMonitor;
-	private List <Ratos> listaRato;
-	private List <Calculadoras> listaCalculadora;
-	private List <Fones> listaFone;
-	private List <Teclados> listaTeclado;
+	private List<Desktop> listaDesktop;
+	private List<Laptop> listaLaptop;
+	private List<Monitor> listaMonitor;
+	private List<Rato> listaRato;
+	private List<Calculadora> listaCalculadora;
+	private List<Fone> listaFone;
+	private List<Teclado> listaTeclado;
 	
 	public GerirTipo() {
 		listaDesktop = new ArrayList<>();

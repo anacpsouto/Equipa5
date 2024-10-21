@@ -19,6 +19,7 @@ public class Desktop {
 		return placa;
 	}
 
+
 	public void setPlaca(String placa) {
 		this.placa = placa;
 	}

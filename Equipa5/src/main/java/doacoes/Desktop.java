@@ -14,7 +14,7 @@ public class Desktop {
 		this.ano = ano;
 		this.memoria = memoria;
 		}
-
+	
 	public String getPlaca() {
 		return placa;
 	}

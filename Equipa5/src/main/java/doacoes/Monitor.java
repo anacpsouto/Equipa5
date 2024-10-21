@@ -18,7 +18,6 @@ public class Monitor extends Equipamento {
 	public int getDimensao() {
 		return dimensao;
 	}
-	
 	public void setDimensao(int dimensao) {
 		this.dimensao = dimensao;
 	}

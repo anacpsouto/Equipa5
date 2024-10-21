@@ -46,5 +46,4 @@ public class Tipo  {
 	public void adicionaTeclado(Teclado novoTeclado) {
 		listaTeclados.add(novoTeclado);
 	}
-	
 }

@@ -9,6 +9,7 @@ import java.util.List;
 /**
  * 
  */
+
 public class GerirDoacoes {
 	private List <Utilizador> listaUtilizadores;
 	
@@ -22,9 +23,5 @@ public class GerirDoacoes {
 	public void adicionaUtilizador(Utilizador novoUtilizador) {
 		listaUtilizadores.add(novoUtilizador);
 	}
-	
-	
-	
-	
-	
+
 }

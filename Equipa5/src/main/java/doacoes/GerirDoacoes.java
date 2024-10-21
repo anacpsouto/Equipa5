@@ -70,5 +70,4 @@ public class GerirDoacoes {
 	public void login(String email, String password) {
 		boolean emailExiste = verificarExistenciaEmail(email);
 	}
-	
 }

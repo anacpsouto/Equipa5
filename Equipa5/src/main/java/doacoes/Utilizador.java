@@ -1,30 +1,30 @@
 /**
  * @author Equipa5
- * Descricao da classe utilizadores: 
+ * Descricao da classe utilizadores:
  */
 package doacoes;
 
 /**
- * 
+ *
  */
 
 public class Utilizador {
 
-	private String nome; 
+	private String nome;
 	private String email;
 	private String password;
-	
-	
+
+
 	public Utilizador() {
-		
+
 	}
-	
+
 	/**
 	 * @param nome
 	 * @param email
 	 * @param password
 	 */
-	
+
 	public Utilizador(String nome, String email, String password) {
 		this.nome = nome;
 		this.email = email;
@@ -54,9 +54,4 @@ public class Utilizador {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
-	
-	
-	
 }

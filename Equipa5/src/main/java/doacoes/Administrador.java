@@ -6,6 +6,9 @@ package doacoes;
 /**
  * 
  */
-public class Administrador extends Utilizador {
-	
+public class Administrador {
+    // Adicionar métodos necessários para o administrador
+    // ex: gerirDoacoes, verificarDoacoes, etc.
+
+
 }

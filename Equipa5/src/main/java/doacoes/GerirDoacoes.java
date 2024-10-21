@@ -23,9 +23,5 @@ public class GerirDoacoes {
 	public void adicionaUtilizador(Utilizador novoUtilizador) {
 		listaUtilizadores.add(novoUtilizador);
 	}
-	
-	
-	
-	
-	
+
 }

@@ -24,10 +24,7 @@ public class Tipo  {
 		listaCalculadora = new ArrayList<>();
 		listaFone = new ArrayList<>();
 		listaTeclado = new ArrayList<>();
-		
-	
-	
-	
+
 	public void adicionaDesktop(Desktop novoDesktop) {
 		listaDesktops.add(novoDesktop);
 	    }

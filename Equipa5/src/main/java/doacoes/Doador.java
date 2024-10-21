@@ -58,4 +58,5 @@ public class Doador {
 		return "Doador [nomedoador=" + nomedoador + ", equipamento=" + equipamento + ", dataEq=" + dataEq + ", tipo=" + tipo
 				+ "]";
 	}
+
 }

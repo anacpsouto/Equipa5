@@ -1,18 +1,16 @@
 package doacoes;
 
-public class Desktop {
+public class Desktop extends Computador {
 	private String placa;
 	private String processador;
-	private String cpu;
-	private int ano;
-	private int memoria;
+	private int disco;
+	private int ram;
 	
-	public Desktop( String placa, String processador, String cpu, int ano, int memoria) {
+	public Desktop( String placa, String processador, int disco, int ram) {
 		this.placa = placa;
 		this.processador = processador;
-		this.cpu = cpu;
-		this.ano = ano;
-		this.memoria = memoria;
+		this.disco = disco;
+		this.ram = ram;
 		}
 
 	public String getPlaca() {
@@ -32,27 +30,19 @@ public class Desktop {
 		this.processador = processador;
 	}
 
-	public String getCpu() {
-		return cpu;
+	public int getDisco() {
+		return disco;
 	}
 
-	public void setCpu(String cpu) {
-		this.cpu = cpu;
+	public void setDisco(int disco) {
+		this.disco = disco;
 	}
 
-	public int getAno() {
-		return ano;
+	public int getRam() {
+		return ram;
 	}
 
-	public void setAno(int ano) {
-		this.ano = ano;
-	}
-
-	public int getMemoria() {
-		return memoria;
-	}
-
-	public void setMemoria(int memoria) {
-		this.memoria = memoria;
+	public void setRam(int ram) {
+		this.ram = ram;
 	}
 }

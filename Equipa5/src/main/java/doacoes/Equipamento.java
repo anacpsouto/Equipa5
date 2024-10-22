@@ -5,13 +5,27 @@ public class Equipamento {
     private int estado;
     private String ano;
     private Tipo tipo;
-    public Equipamento(int estado, String ano, Tipo tipo) {
+    private String modelo;
+    public Equipamento(int estado, String ano, Tipo tipo, String modelo) {
         this.estado = estado;
         this.ano = ano;
         this.tipo = tipo;
+        this.modelo = modelo;
     }
 
-    public int getEstado() {
+    public String getModelo() {
+		return modelo;
+	}
+
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+
+	public String getAno() {
+		return ano;
+	}
+
+	public int getEstado() {
         return estado;
     }
 
@@ -23,9 +37,6 @@ public class Equipamento {
         }
     }
 
-    public String getAno() {
-        return ano;
-    }
 
     public void setAno(String ano) {
         if (ano.matches("\\d{4}")) {

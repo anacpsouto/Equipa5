@@ -4,6 +4,7 @@
 package doacoes;
 
 import java.util.ArrayList;
+import java.util.List;
 /**
  * 
  */
@@ -11,12 +12,12 @@ public class Tipo  {
 	private List<Desktop> listaDesktop;
 	private List<Laptop> listaLaptop;
 	private List<Monitor> listaMonitor;
-	private List<Rato> listaRato;
-	private List<Calculadora> listaCalculadora;
-	private List<Fone> listaFone;
-	private List<Teclado> listaTeclado;
+	private List<Acessorio> listaRato;
+	private List<Acessorio> listaCalculadora;
+	private List<Acessorio> listaFone;
+	private List<Acessorio> listaTeclado;
 	
-	public GerirTipo() {
+	public Tipo() {
 		listaDesktop = new ArrayList<>();
 		listaLaptop = new ArrayList<>();
 		listaMonitor = new ArrayList<>();
@@ -24,26 +25,28 @@ public class Tipo  {
 		listaCalculadora = new ArrayList<>();
 		listaFone = new ArrayList<>();
 		listaTeclado = new ArrayList<>();
+	}
 
 	public void adicionaDesktop(Desktop novoDesktop) {
-		listaDesktops.add(novoDesktop);
+		listaDesktop.add(novoDesktop);
 	    }
 		public void adicionaLaptop(Laptop novoLaptop) {
-			listaUtilizadores.add(novoUtilizador);
+			listaLaptop.add(novoLaptop);
 		}
 	public void adicionaMonitor(Monitor novoMonitor) {
-			listaLaptops.add(novoLaptop);
+			listaMonitor.add(novoMonitor);
 		}
-	public void adicionaRato(Rato novoRato) {
-		listaURatos.add(novoRato);
+	public void adicionaRato(Acessorio novoRato) {
+		
+		listaRato.add(novoRato);
 	}
-	public void adicionaCalculadora(Calculadora novoCalculadora) {
-		listaCalculadora.add(novoalculadora);
+	public void adicionaCalculadora(Acessorio novoCalculadora) {
+		listaCalculadora.add(novoCalculadora);
 	}
-	public void adicionaFone(Fone novoFone) {
-		listaFones.add(novoFone);
+	public void adicionaFone(Acessorio novoFone) {
+		listaFone.add(novoFone);
 	}
-	public void adicionaTeclado(Teclado novoTeclado) {
-		listaTeclados.add(novoTeclado);
+	public void adicionaTeclado(Acessorio novoTeclado) {
+		listaTeclado.add(novoTeclado);
 	}
 }

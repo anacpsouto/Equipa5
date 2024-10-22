@@ -1,23 +1,23 @@
 package doacoes;
 
-public class Laptop {
+public class Laptop extends Equipamento {
 	private String placa;
 	private String processador;
-	private String cpu;
-	private int ano;
-	private int memoria;
+	private int disco;
+	private int ram;
 	
-	public Laptop( String placa, String processador, String cpu, int ano, int memoria) {
+	public Laptop( String placa, String processador, int disco, int ram,String modelo,Tipo tipo, String estado, int ano) {
+		super(ano ,modelo,tipo, estado);
 		this.placa = placa;
 		this.processador = processador;
-		this.cpu = cpu;
-		this.ano = ano;
-		this.memoria = memoria;
+		this.disco = disco;
+		this.ram = ram;
 		}
 
 	public String getPlaca() {
 		return placa;
-	} 
+	}
+
 
 	public void setPlaca(String placa) {
 		this.placa = placa;
@@ -31,27 +31,19 @@ public class Laptop {
 		this.processador = processador;
 	}
 
-	public String getCpu() {
-		return cpu;
+	public int getDisco() {
+		return disco;
 	}
 
-	public void setCpu(String cpu) {
-		this.cpu = cpu;
+	public void setDisco(int disco) {
+		this.disco = disco;
 	}
 
-	public int getAno() {
-		return ano;
+	public int getRam() {
+		return ram;
 	}
 
-	public void setAno(int ano) {
-		this.ano = ano;
-	}
-
-	public int getMemoria() {
-		return memoria;
-	}
-
-	public void setMemoria(int memoria) {
-		this.memoria = memoria;
+	public void setRam(int ram) {
+		this.ram = ram;
 	}
 }

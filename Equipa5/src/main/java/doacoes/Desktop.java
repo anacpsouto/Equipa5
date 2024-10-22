@@ -1,12 +1,13 @@
 package doacoes;
 
-public class Desktop extends Computador {
+public class Desktop extends Equipamento {
 	private String placa;
 	private String processador;
 	private int disco;
 	private int ram;
 	
-	public Desktop( String placa, String processador, int disco, int ram) {
+	public Desktop( String placa, String processador, int disco, int ram,String modelo,Tipo tipo, String estado, int ano) {
+		super(ano ,modelo,tipo, estado);
 		this.placa = placa;
 		this.processador = processador;
 		this.disco = disco;

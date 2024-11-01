@@ -1,57 +1,75 @@
-/**
- * @author Equipa5
- * Descricao da classe utilizadores:
- */
 package doacoes;
 
-/**
- *
- */
+import java.util.ArrayList;
 
 public class Utilizador {
-
-	private String nome;
 	private String email;
-	private String password;
+    private String password;
+    private ArrayList<String> recebidos;
+    private ArrayList<String> doacoes;
+    private ArrayList<Equipamento> equipamentos;
+    private ArrayList<String> solicitacoes;
 
 
-	public Utilizador() {
-
-	}
-
-	/**
-	 * @param nome
-	 * @param email
-	 * @param password
-	 */
-
-	public Utilizador(String nome, String email, String password) {
-		this.nome = nome;
-		this.email = email;
-		this.password = password;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
+public Utilizador(String email, String password) {
+    this.email = email;
+    this.password = password;
+    recebidos = new ArrayList<>();
+    doacoes = new ArrayList<>();
+    equipamentos = new ArrayList<>();
+    solicitacoes = new ArrayList<>();
+    
 }
+
+public String getPassword() {
+    return password;
+}
+
+public void setPassword(String password) {
+    this.password = password;
+}
+
+public String getEmail() {
+    return email;
+}
+
+public void setEmail(String email) {
+    this.email = email;
+}
+
+public ArrayList<String> getRecebidos() {
+    return recebidos;
+}
+
+public void adicionarRecebido(String recebido) {
+    recebidos.add(recebido);
+}
+    
+public ArrayList<String> getDoacoes() {
+        return doacoes;
+    }
+
+public void adicionarDoacao(String doacao) {
+        doacoes.add(doacao);
+}
+
+public ArrayList<Equipamento> getEquipamento() {
+    return equipamentos;
+}
+
+public void setEquipamento(Equipamento equipamento) {
+    equipamentos.add(equipamento);
+}
+
+public ArrayList<String> getSolicitacoes() {
+    return solicitacoes;
+}
+
+public void adicionarSolicitacao(String solicitacao) {
+    solicitacoes.add(solicitacao);
+}
+    
+} // end class
+
+
+

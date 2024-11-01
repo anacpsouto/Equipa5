@@ -1,11 +1,10 @@
 package doacoes;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class GerirUtilizador {
-	private List <Utilizador> utilizadores;
+	private ArrayList<Utilizador> utilizadores;
 	
 	public GerirUtilizador() {
         utilizadores = new ArrayList<>();
@@ -32,14 +31,14 @@ public class GerirUtilizador {
 	public void adicionarEquipamento(String email, String pass, Equipamento equipamento) {
         Utilizador u = pesquisar(email, pass);
         if (u != null) {
-            u.setEquipamentos(equipamento);
+            u.setEquipamento(equipamento);
         }
     }
 
     public void mostrarEquipamentos(String email, String pass) {
         Utilizador u = pesquisar(email, pass);
         if (u != null) {
-            for (Equipamento equipamento : u.getEquipamentos()) {
+            for (Equipamento equipamento : u.getEquipamento()) {
                 System.out.println("Nome: " + equipamento.getNome() + ", Ano: " + equipamento.getAno() + ", Modelo: " + equipamento.getModelo() + ", Estado: " + equipamento.getEstadoConservacao() + equipamento.toString());
             }
         }
@@ -73,7 +72,7 @@ public class GerirUtilizador {
         Utilizador dono = pesquisarUtilizadorPorEmail(emailDono);
 
         if (dono != null) {
-            for (Equipamento equipamento : dono.getEquipamentos()) {
+            for (Equipamento equipamento : dono.getEquipamento()) {
                 if (equipamento.getNome().equalsIgnoreCase(equipamentoSolicitado)) {
                     dono.adicionarSolicitacao("Solicitação para o equipamento: " + equipamentoSolicitado);
                     System.out.println("Solicitação enviada.");
@@ -105,14 +104,14 @@ public class GerirUtilizador {
                             String[] parts = solicitacao.split(": ");
                             String nomeEquipamento = parts[1];
                             Equipamento equipamentoARemover = null;
-                            for (Equipamento equipamento : u.getEquipamentos()) {
+                            for (Equipamento equipamento : u.getEquipamento()) {
                                 if (equipamento.getNome().equalsIgnoreCase(nomeEquipamento)) {
                                     equipamentoARemover = equipamento;
                                     break;
                                 }
                             }
                             if (equipamentoARemover != null) {
-                                u.getEquipamentos().remove(equipamentoARemover);
+                                u.getEquipamento().remove(equipamentoARemover);
                                 System.out.println("Solicitação aceita e equipamento removido.");
                             }
                         

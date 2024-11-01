@@ -1,14 +1,12 @@
 package doacoes;
 
-
 public class Computador extends Equipamento {
 	private String tipoComputador;
 	private String ram;
 	private String disco;
 	private String processador;
-
-	public Computador(String nome, String ano, String modelo, String estadoConservacao, String tipoComputador,
-			String ram, String disco, String processador) {
+	
+	public Computador(String nome, String ano, String modelo, String estadoConservacao, String tipoComputador, String ram, String disco, String processador) {
 		super(nome, ano, modelo, estadoConservacao);
 		this.tipoComputador = tipoComputador;
 		this.ram = ram;
@@ -53,5 +51,11 @@ public class Computador extends Equipamento {
 		return ", Tipo de Computador: " + tipoComputador + ", Ram: " + ram + ", Disco: " + disco + ", Processador: "
 				+ processador;
 	}
+	
+	
+	
+	
+	
+	
 
 }

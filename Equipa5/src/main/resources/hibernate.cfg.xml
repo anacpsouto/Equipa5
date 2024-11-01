@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-configuration SYSTEM "hibernate-configuration-3.0.dtd">
+<!DOCTYPE hibernate-configuration PUBLIC
+ 		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+ 		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
 	<session-factory>
 		<!-- Database connection settings -->
 		<!-- Set the Driver Class -->
 		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
 		<!-- Set URL -->
-		<property name="connection.url">jdbc:mysql://localhost:3306/equipa5</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/bookstore</property>
 		<!-- Set the user name -->
 		<property name="connection.username">root</property>
-		<!-- Set the password write the pwd you choose when installing MySQL -->
+		<!-- Set the password - write the password you choose when installing MySQL -->
 		<property name="connection.password">Projetos2024</property>
 		<!-- Echo all executed SQL to stdout -->
 		<property name="show_sql">true</property>
-		<!-- Set the annotated classes (inform the complete namespace) -->
-		<mapping class="doacoes.Utilizador" />
+		<!-- Set the annotated classes (inform the complete espaço do nome) -->
+		<mapping class="com.upt.hibernate.Book" />
+		<!--Usado para que o Hibernate saiba qual e o dialeto usado para o banco de dados, para que haja uma comunicacao correta e sem erros de tempo de execucao. -->
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-		<!-- -->
+		<!--  -->
 		<property name="hibernate.hbm2ddl.auto">update</property>
 
 	</session-factory>

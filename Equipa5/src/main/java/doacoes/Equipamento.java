@@ -1,55 +1,41 @@
 package doacoes;
 
 public class Equipamento {
+	private String nome;
+	private String ano;
+	private String modelo;
+	private String estadoConservacao;
+	public Equipamento(String nome, String ano, String modelo, String estadoConservacao) {
+		this.nome = nome;
+		this.ano = ano;
+		this.modelo = modelo;
+		this.estadoConservacao = estadoConservacao;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
-    private int estado;
-    private String ano;
-    private Tipo tipo;
-    public Equipamento(int estado, String ano, Tipo tipo) {
-        this.estado = estado;
-        this.ano = ano;
-        this.tipo = tipo;
-    }
+	public String getAno() {
+		return ano;
+	}
+	public void setAno(String ano) {
+		this.ano = ano;
+	}
+	public String getModelo() {
+		return modelo;
+	}
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+	public String getEstadoConservacao() {
+		return estadoConservacao;
+	}
+	public void setEstadoConservacao(String estadoConservacao) {
+		this.estadoConservacao = estadoConservacao;
+	}	
 
-    public int getEstado() {
-        return estado;
-    }
-
-    public void setEstado(int estado) {
-        if(estado >= 0 && estado <= 10) {
-            this.estado = estado;
-        } else {
-            System.out.println("Estado inválido. O valor deve ser entre 0 e 10.");
-        }
-    }
-
-    public String getAno() {
-        return ano;
-    }
-
-    public void setAno(String ano) {
-        if (ano.matches("\\d{4}")) {
-            this.ano = ano;
-        } else {
-            System.out.println("Ano inválido. Deve ser um ano de 4 dígitos.");
-        }
-    }
-
-    public Tipo getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(Tipo tipo) {
-        this.tipo = tipo;
-    }
-
-    /*
-    @Override
-    public String toString() {
-        return "Equipamento [estado=" + estado + ", ano=" + ano + ", tipo=" + tipo + "]";
-    }
-    */
-
-
-
-}
+} // end class

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GerirUtilizador {
+	
 	private ArrayList<Utilizador> utilizadores;
 	
 	public GerirUtilizador() {

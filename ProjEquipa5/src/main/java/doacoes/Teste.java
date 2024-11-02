@@ -5,6 +5,11 @@ import java.util.Scanner;
 
 public class Teste {
     public static void main(String[] args) {
+    	
+    	EquipamentosManager pcmanager = new EquipamentosManager();
+    	pcmanager.setup();
+    	
+    	
         Scanner sc = new Scanner(System.in);
         int opcao = 0;
         GerirUtilizador g = new GerirUtilizador();
@@ -18,7 +23,8 @@ public class Teste {
             opcao = sc.nextInt();
             sc.nextLine();
 
-            if (opcao == 3) break;
+            if (opcao == 3) 
+            	break;
 
             switch (opcao) {
                 case 1 -> {
@@ -64,6 +70,7 @@ public class Teste {
                                 
                                 System.out.println("É um computador ou um acessório? 1 para computador, 2 para acessório");
                                 int tipoEscolha = sc.nextInt();
+                                sc.nextLine();
                                 
                                 if (tipoEscolha == 1) {
                                 	
@@ -81,6 +88,8 @@ public class Teste {
                                 	
                                 Computador equipamento = new Computador(nome, ano, modelo, estadoConservacao, tipoComputador, ram, disco, processador);
                                 g.adicionarEquipamento(email, pass, equipamento);
+                                pcmanager.create(email, pass, equipamento);
+                                
                                 }
                                 
                                 if (tipoEscolha == 2) {
@@ -92,6 +101,8 @@ public class Teste {
                                 	
                                 	Acessorio equipamento = new Acessorio(nome, ano, modelo, estadoConservacao, tipoAcessorio, informacao);
                                     g.adicionarEquipamento(email, pass, equipamento);
+                                    pcmanager.create(email, pass, equipamento);
+                                    
                                 }
                                 	
                             }
@@ -127,7 +138,9 @@ public class Teste {
                     System.out.println("Login falhado");
                 }
             }
+             
         }
+     
     }
 }
 } // falta fazer com que ao aceitar uma solicitação, o equipamento vá para o array de recebidos e a informação da doação vá para o array das doações

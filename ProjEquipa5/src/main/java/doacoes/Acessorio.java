@@ -1,5 +1,9 @@
 package doacoes;
 
+import jakarta.persistence.*;
+
+@Entity
+@DiscriminatorValue("Acessorio")
 public class Acessorio extends Equipamento {
 	private String tipoAcessorio;
 	private String informacao;

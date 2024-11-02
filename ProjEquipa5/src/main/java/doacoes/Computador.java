@@ -1,5 +1,9 @@
 package doacoes;
 
+import jakarta.persistence.*;
+
+@Entity
+@DiscriminatorValue("Computador")
 public class Computador extends Equipamento {
 	private String tipoComputador;
 	private String ram;
@@ -13,7 +17,7 @@ public class Computador extends Equipamento {
 		this.disco = disco;
 		this.processador = processador;
 	}
-
+	
 	public String getTipo() {
 		return tipoComputador;
 	}

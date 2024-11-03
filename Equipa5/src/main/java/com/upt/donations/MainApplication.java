@@ -59,6 +59,26 @@ public class MainApplication {
 		User user = new User(name, email, password, userType);
 		USER_UTIL.registerUser(user);
 	}
+	
+	private static void editUser(Scanner scanner) {
+        System.out.print("Enter user email to edit user name and user password: ");
+        String userEmail = scanner.nextLine();
+        User userForEdition = USER_UTIL.searchUserByEmail(userEmail);
+        
+        if (userForEdition != null) {
+            System.out.print("Enter the new user name: ");
+            String newUserName = scanner.nextLine();
+            userForEdition.setName(newUserName);
+            
+            System.out.print("Enter the new user password: ");
+            String newUserPassword = scanner.nextLine();
+            userForEdition.setPassword(newUserPassword);
+           
+            USER_UTIL.updateUser(userForEdition);
+        } else {
+            System.out.println("User not found.");
+        }
+    }
 
 	private static void loginUser(Scanner scanner) {
 		System.out.print("Enter email: ");
@@ -81,7 +101,8 @@ public class MainApplication {
 		System.out.println("4. Delete Equipment");
 		System.out.println("5. Register Donation");
 		System.out.println("6. Search Donation");
-		System.out.println("7. Logout");
+		System.out.println("7. Edit User");
+		System.out.println("8. Logout");
 
 		int choice = scanner.nextInt();
 		scanner.nextLine();
@@ -93,7 +114,8 @@ public class MainApplication {
 		case 4 -> deleteEquipment(scanner);
 		case 5 -> registerDonation(scanner);
 		case 6 -> searchDonationsByUser(scanner);
-		case 7 -> {
+		case 7 -> editUser(scanner);
+		case 8 -> {
 			currentUser = null;
 			System.out.println("Logged out successfully.");
 		}
@@ -104,6 +126,8 @@ public class MainApplication {
 	private static void showRecipientMenu(Scanner scanner) {
 		System.out.println("1. View All Donations");
 		System.out.println("2. Search Donations By Donor");
+		System.out.println("3. Edit User");
+		System.out.println("4. Logout");
 
 		int choice = scanner.nextInt();
 		scanner.nextLine();
@@ -111,6 +135,11 @@ public class MainApplication {
 		switch (choice) {
 		case 1 -> viewAllDonations();
 		case 2 -> searchDonationsByUser(scanner);
+		case 3 -> editUser(scanner);
+		case 4 -> {
+			currentUser = null;
+			System.out.println("Logged out successfully.");
+		}
 		default -> System.out.println("Invalid choice!");
 		}
 	}
@@ -175,7 +204,7 @@ public class MainApplication {
     private static void registerDonation(Scanner scanner) {
         Donation donation = new Donation(new Date(), DonationStatus.PENDING, currentUser);
 
-        System.out.print("Enter equipment name to include in the donation (comma-separated): ");
+        System.out.print("Enter equipment name to include in the donation: ");
         String[] equipmentNames = scanner.nextLine().split(",");
 
         for (String equipmentName : equipmentNames) {

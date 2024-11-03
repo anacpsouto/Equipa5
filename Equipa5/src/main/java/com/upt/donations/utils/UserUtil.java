@@ -61,11 +61,21 @@ public class UserUtil {
 	}
 
 	public void updateUser(User user) {
+		Set<ConstraintViolation<User>> violations = HibernateUtil.getValidator().validate(user);
+
+		if (!violations.isEmpty()) {
+			for (ConstraintViolation<User> violation : violations) {
+				System.out.println("Validation error: " + violation.getMessage());
+			}
+			return;
+		}
+		
 		Transaction transaction = null;
 		try (Session session = HibernateUtil.getSessionFactory().openSession()) {
 			transaction = session.beginTransaction();
-			session.update(user);
+			session.merge(user);
 			transaction.commit();
+			System.out.println("User updated successfully!");
 		} catch (Exception e) {
 			if (transaction != null) {
 				transaction.rollback();
@@ -78,7 +88,7 @@ public class UserUtil {
 		Transaction transaction = null;
 		try (Session session = HibernateUtil.getSessionFactory().openSession()) {
 			transaction = session.beginTransaction();
-			session.delete(user);
+			session.remove(user);
 			transaction.commit();
 		} catch (Exception e) {
 			if (transaction != null) {
@@ -87,7 +97,15 @@ public class UserUtil {
 			e.printStackTrace();
 		}
 	}
-
+	
+	public User searchUserByEmail(String userEmail) {
+		try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+			Query<User> query = session.createQuery("FROM User WHERE email LIKE :userEmail", User.class);
+			query.setParameter("userEmail", "%" + userEmail + "%");
+			return query.uniqueResult();
+		}
+	}
+	
 	public User searchUserByName(String userName) {
 		try (Session session = HibernateUtil.getSessionFactory().openSession()) {
 			Query<User> query = session.createQuery("FROM User WHERE name LIKE :userName", User.class);

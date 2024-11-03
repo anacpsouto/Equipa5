@@ -104,6 +104,7 @@ public class MainApplication {
 	private static void showRecipientMenu(Scanner scanner) {
 		System.out.println("1. View All Donations");
 		System.out.println("2. Search Donations By Donor");
+		System.out.println("3. Logout");
 
 		int choice = scanner.nextInt();
 		scanner.nextLine();
@@ -111,6 +112,10 @@ public class MainApplication {
 		switch (choice) {
 		case 1 -> viewAllDonations();
 		case 2 -> searchDonationsByUser(scanner);
+		case 3 -> {
+			currentUser = null;
+			System.out.println("Logged out successfully.");
+		}
 		default -> System.out.println("Invalid choice!");
 		}
 	}

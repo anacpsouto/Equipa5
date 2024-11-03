@@ -20,6 +20,7 @@ public class Equipment {
 	@Column(nullable = false)
 	private String category;
 
+	//@ManyToOne(cascade = CascadeType.ALL)
 	@ManyToOne
 	@JoinColumn(name = "user_id", nullable = false)
 	private User user;
